@@ -1,10 +1,10 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse\Servico;
+namespace EvandroSwk\Plugnotas\Tests\Nfse\Servico;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Valor;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\Servico\Valor;
 
 class ValorTest extends TestCase
 {

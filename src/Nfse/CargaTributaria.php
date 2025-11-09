@@ -1,8 +1,8 @@
 <?php
-namespace TecnoSpeed\Plugnotas\Nfse;
+namespace EvandroSwk\Plugnotas\Nfse;
 
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Abstracts\BuilderAbstract;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Abstracts\BuilderAbstract;
 
 class CargaTributaria extends BuilderAbstract
 {

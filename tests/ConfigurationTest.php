@@ -1,8 +1,8 @@
 <?php
-namespace TecnoSpeed\Plugnotas\Tests;
+namespace EvandroSwk\Plugnotas\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Configuration;
 
 final class ConfigurationTest extends TestCase
 {

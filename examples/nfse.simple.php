@@ -2,9 +2,9 @@
 
 require '../vendor/autoload.php';
 
-use TecnoSpeed\Plugnotas\Builders\NfseBuilder;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Builders\NfseBuilder;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Communication\CallApi;
 
 try {
     $nfse = (new NfseBuilder)

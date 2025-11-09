@@ -1,4 +1,4 @@
-object(TecnoSpeed\Plugnotas\Communication\Response)#35 (2) {
+object(EvandroSwk\Plugnotas\Communication\Response)#35 (2) {
   ["body"]=>
   array(1) {
     [0]=>
@@ -38,7 +38,7 @@ object(TecnoSpeed\Plugnotas\Communication\Response)#35 (2) {
   ["statusCode"]=>
   int(200)
 }
-object(TecnoSpeed\Plugnotas\Communication\Response)#35 (2) {
+object(EvandroSwk\Plugnotas\Communication\Response)#35 (2) {
   ["body"]=>
   array(1) {
     [0]=>

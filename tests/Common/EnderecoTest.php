@@ -1,15 +1,15 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Common;
+namespace EvandroSwk\Plugnotas\Tests\Common;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Common\Endereco;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Common\Endereco;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 class EnderecoTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setTipoLogradouro
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setTipoLogradouro
      */
     public function testInvalidTipoLogradouro()
     {
@@ -20,7 +20,7 @@ class EnderecoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setLogradouro
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setLogradouro
      */
     public function testEmptyLogradouro()
     {
@@ -31,7 +31,7 @@ class EnderecoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setNumero
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setNumero
      */
     public function testEmptyNumero()
     {
@@ -42,7 +42,7 @@ class EnderecoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setTipoBairro
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setTipoBairro
      */
     public function testInvalidTipoBairro()
     {
@@ -53,7 +53,7 @@ class EnderecoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setCodigoCidade
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setCodigoCidade
      */
     public function testInvalidCodigoCidade()
     {
@@ -66,7 +66,7 @@ class EnderecoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setEstado
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setEstado
      */
     public function testInvalidEstado()
     {
@@ -77,7 +77,7 @@ class EnderecoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setCep
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setCep
      */
     public function testInvalidCep()
     {
@@ -88,17 +88,17 @@ class EnderecoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setCep
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setTipoLogradouro
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setLogradouro
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setNumero
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setComplemento
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setTipoBairro
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setBairro
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setCodigoCidade
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setDescricaoCidade
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setEstado
-     * @covers TecnoSpeed\Plugnotas\Common\Endereco::setCep
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setCep
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setTipoLogradouro
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setLogradouro
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setNumero
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setComplemento
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setTipoBairro
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setBairro
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setCodigoCidade
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setDescricaoCidade
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setEstado
+     * @covers EvandroSwk\Plugnotas\Common\Endereco::setCep
      */
     public function testFullAddress()
     {

@@ -1,5 +1,5 @@
 {
-  "name": "tecnospeedsa/plugnotas",
+  "name": "EvandroSwk/plugnotas",
   "description": "Pacote para utilização do Plugnotas em PHP",
   "type": "library",
   "keywords": [
@@ -11,12 +11,12 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "TecnoSpeed\\Plugnotas\\": "src/"
+      "EvandroSwk\\Plugnotas\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "TecnoSpeed\\Plugnotas\\Tests\\": "tests/"
+      "EvandroSwk\\Plugnotas\\Tests\\": "tests/"
     }
   },
   "scripts": {

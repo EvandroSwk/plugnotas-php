@@ -1,6 +1,6 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse;
+namespace EvandroSwk\Plugnotas\Tests\Nfse;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -8,19 +8,19 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Common\Endereco;
-use TecnoSpeed\Plugnotas\Common\Telefone;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
-use TecnoSpeed\Plugnotas\Error\InvalidTypeError;
-use TecnoSpeed\Plugnotas\Error\RequiredError;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Nfse\Tomador;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Common\Endereco;
+use EvandroSwk\Plugnotas\Common\Telefone;
+use EvandroSwk\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Error\InvalidTypeError;
+use EvandroSwk\Plugnotas\Error\RequiredError;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\Tomador;
 
 class TomadorTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setCpfCnpj
      */
     public function testWithNullcpfCnpj()
     {
@@ -30,7 +30,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setCpfCnpj
      */
     public function testWithInvalidLengthCpfCnpj()
     {
@@ -41,7 +41,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setCpfCnpj
      */
     public function testWithInvalidCpfFormation()
     {
@@ -52,7 +52,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setCpfCnpj
      */
     public function testWithInvalidCnpjFormation()
     {
@@ -63,7 +63,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setRazaoSocial
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setRazaoSocial
      */
     public function testWithNullRazaoSocial()
     {
@@ -74,7 +74,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setEmail
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setEmail
      */
     public function testWithInvalidEmail()
     {
@@ -85,20 +85,20 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setCpfCnpj
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setEmail
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setEndereco
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setInscricaoEstadual
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setNomeFantasia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setRazaoSocial
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::setTelefone
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::getCpfCnpj
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::getEmail
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::getEndereco
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::getInscricaoEstadual
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::getNomeFantasia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::getRazaoSocial
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::getTelefone
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setEmail
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setEndereco
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setInscricaoEstadual
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setNomeFantasia
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setRazaoSocial
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::setTelefone
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::getCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::getEmail
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::getEndereco
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::getInscricaoEstadual
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::getNomeFantasia
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::getRazaoSocial
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::getTelefone
      */
     public function testValidPrestadorCreation()
     {
@@ -136,7 +136,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::fromArray
      */
     public function testBuildFromArray()
     {
@@ -147,7 +147,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::fromArray
      */
     public function testBuildFromArrayWithEnderecoAndTelefone()
     {
@@ -169,7 +169,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::fromArray
      */
     public function testBuildFromArrayWithInvalidParameter()
     {
@@ -179,7 +179,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::validate
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::validate
      */
     public function testValidateWithInvalidObject()
     {
@@ -194,7 +194,7 @@ class TomadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Tomador::validate
+     * @covers EvandroSwk\Plugnotas\Nfse\Tomador::validate
      */
     public function testValidateWithValidObject()
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse;
+namespace EvandroSwk\Plugnotas\Tests\Nfse;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Nfse\Impressao;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\Impressao;
 
 class ImpressaoTest extends TestCase
 {

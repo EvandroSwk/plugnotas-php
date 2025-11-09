@@ -1,11 +1,11 @@
 <?php
-namespace TecnoSpeed\Plugnotas\Tests;
+namespace EvandroSwk\Plugnotas\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Error\ConfigurationRequiredError;
-use TecnoSpeed\Plugnotas\Traits\Communication;
+use EvandroSwk\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Error\ConfigurationRequiredError;
+use EvandroSwk\Plugnotas\Traits\Communication;
 
 class ExampleCase
 {
@@ -20,7 +20,7 @@ class ExampleCase
 final class CommunicationTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Traits\Communication::getCallApiInstance
+     * @covers EvandroSwk\Plugnotas\Traits\Communication::getCallApiInstance
      */
     public function testWithoutCommunication()
     {
@@ -31,7 +31,7 @@ final class CommunicationTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Traits\Communication::getCallApiInstance
+     * @covers EvandroSwk\Plugnotas\Traits\Communication::getCallApiInstance
      */
     public function testSuccessFull()
     {

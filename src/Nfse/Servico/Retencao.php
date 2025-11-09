@@ -1,12 +1,12 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Nfse\Servico;
+namespace EvandroSwk\Plugnotas\Nfse\Servico;
 
 use Respect\Validation\Validator as v;
-use TecnoSpeed\Plugnotas\Abstracts\BuilderAbstract;
-use TecnoSpeed\Plugnotas\Common\ValorAliquota;
-use TecnoSpeed\Plugnotas\Common\PisCofinsValorAliquota;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Abstracts\BuilderAbstract;
+use EvandroSwk\Plugnotas\Common\ValorAliquota;
+use EvandroSwk\Plugnotas\Common\PisCofinsValorAliquota;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 class Retencao extends BuilderAbstract
 {

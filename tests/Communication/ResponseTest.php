@@ -1,15 +1,15 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Communication;
+namespace EvandroSwk\Plugnotas\Tests\Communication;
 
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Communication\Response;
+use EvandroSwk\Plugnotas\Communication\Response;
 
 class ResponseTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Communication\Response::parse
+     * @covers EvandroSwk\Plugnotas\Communication\Response::parse
      */
     public function testWithValidData()
     {

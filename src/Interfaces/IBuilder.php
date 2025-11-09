@@ -1,6 +1,6 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Interfaces;
+namespace EvandroSwk\Plugnotas\Interfaces;
 
 interface IBuilder
 {

@@ -1,31 +1,31 @@
 <?php
-namespace TecnoSpeed\Plugnotas\Tests\Builders;
+namespace EvandroSwk\Plugnotas\Tests\Builders;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Builders\NfseBuilder;
-use TecnoSpeed\Plugnotas\Common\Endereco;
-use TecnoSpeed\Plugnotas\Common\Telefone;
-use TecnoSpeed\Plugnotas\Common\Nfse;
-use TecnoSpeed\Plugnotas\Error\InvalidTypeError;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Nfse\CidadePrestacao;
-use TecnoSpeed\Plugnotas\Nfse\Impressao;
-use TecnoSpeed\Plugnotas\Nfse\Prestador;
-use TecnoSpeed\Plugnotas\Nfse\Rps;
-use TecnoSpeed\Plugnotas\Nfse\Servico;
-use TecnoSpeed\Plugnotas\Nfse\Tomador;
+use EvandroSwk\Plugnotas\Builders\NfseBuilder;
+use EvandroSwk\Plugnotas\Common\Endereco;
+use EvandroSwk\Plugnotas\Common\Telefone;
+use EvandroSwk\Plugnotas\Common\Nfse;
+use EvandroSwk\Plugnotas\Error\InvalidTypeError;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\CidadePrestacao;
+use EvandroSwk\Plugnotas\Nfse\Impressao;
+use EvandroSwk\Plugnotas\Nfse\Prestador;
+use EvandroSwk\Plugnotas\Nfse\Rps;
+use EvandroSwk\Plugnotas\Nfse\Servico;
+use EvandroSwk\Plugnotas\Nfse\Tomador;
 
 class NfseBuilderTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withCidadePrestacao
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::build
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withCidadePrestacao
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::build
      */
     public function testWithWrongObjectType()
     {
         $this->expectException(InvalidTypeError::class);
         $this->expectExceptionMessage(
-            'Deve ser informado um array ou um objeto do tipo: TecnoSpeed\Plugnotas\Nfse\CidadePrestacao'
+            'Deve ser informado um array ou um objeto do tipo: EvandroSwk\Plugnotas\Nfse\CidadePrestacao'
         );
         $nfse = (new NfseBuilder)
             ->withCidadePrestacao('teste')
@@ -33,8 +33,8 @@ class NfseBuilderTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withCidadePrestacao
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::build
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withCidadePrestacao
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::build
      */
     public function testWithOneObject()
     {
@@ -47,9 +47,9 @@ class NfseBuilderTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::build
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::callFromArray
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withRps
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::build
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::callFromArray
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withRps
      */
     public function testWithRpsObject()
     {
@@ -66,9 +66,9 @@ class NfseBuilderTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::build
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::callFromArray
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withRps
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::build
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::callFromArray
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withRps
      */
     public function testWithInvalidTypeObject()
     {
@@ -88,14 +88,14 @@ class NfseBuilderTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::build
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::callFromArray
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withCidadePrestacao
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withImpressao
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withPrestador
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withRps
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withServicos
-     * @covers TecnoSpeed\Plugnotas\Builders\NfseBuilder::withTomador
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::build
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::callFromArray
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withCidadePrestacao
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withImpressao
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withPrestador
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withRps
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withServicos
+     * @covers EvandroSwk\Plugnotas\Builders\NfseBuilder::withTomador
      */
     public function testWithValidData()
     {

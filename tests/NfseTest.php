@@ -1,29 +1,29 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests;
+namespace EvandroSwk\Plugnotas\Tests;
 
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Builders\NfseBuilder;
-use TecnoSpeed\Plugnotas\Common\Endereco;
-use TecnoSpeed\Plugnotas\Common\Telefone;
-use TecnoSpeed\Plugnotas\Common\ValorAliquota;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Error\RequiredError;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Nfse;
-use TecnoSpeed\Plugnotas\Nfse\CidadePrestacao;
-use TecnoSpeed\Plugnotas\Nfse\Impressao;
-use TecnoSpeed\Plugnotas\Nfse\Prestador;
-use TecnoSpeed\Plugnotas\Nfse\Rps;
-use TecnoSpeed\Plugnotas\Nfse\Servico;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Deducao;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Evento;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Iss;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Obra;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Retencao;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Valor;
-use TecnoSpeed\Plugnotas\Nfse\Tomador;
+use EvandroSwk\Plugnotas\Builders\NfseBuilder;
+use EvandroSwk\Plugnotas\Common\Endereco;
+use EvandroSwk\Plugnotas\Common\Telefone;
+use EvandroSwk\Plugnotas\Common\ValorAliquota;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Error\RequiredError;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse;
+use EvandroSwk\Plugnotas\Nfse\CidadePrestacao;
+use EvandroSwk\Plugnotas\Nfse\Impressao;
+use EvandroSwk\Plugnotas\Nfse\Prestador;
+use EvandroSwk\Plugnotas\Nfse\Rps;
+use EvandroSwk\Plugnotas\Nfse\Servico;
+use EvandroSwk\Plugnotas\Nfse\Servico\Deducao;
+use EvandroSwk\Plugnotas\Nfse\Servico\Evento;
+use EvandroSwk\Plugnotas\Nfse\Servico\Iss;
+use EvandroSwk\Plugnotas\Nfse\Servico\Obra;
+use EvandroSwk\Plugnotas\Nfse\Servico\Retencao;
+use EvandroSwk\Plugnotas\Nfse\Servico\Valor;
+use EvandroSwk\Plugnotas\Nfse\Tomador;
 
 class NfseTest extends TestCase
 {

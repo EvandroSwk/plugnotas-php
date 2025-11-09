@@ -1,9 +1,9 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Communication;
+namespace EvandroSwk\Plugnotas\Communication;
 
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Communication\Response as ResponseObject;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Communication\Response as ResponseObject;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Exception\ClientException;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Interfaces;
+namespace EvandroSwk\Plugnotas\Interfaces;
 
-use TecnoSpeed\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Configuration;
 
 interface IDfe
 {

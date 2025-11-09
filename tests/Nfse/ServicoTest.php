@@ -1,6 +1,6 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse;
+namespace EvandroSwk\Plugnotas\Tests\Nfse;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -8,25 +8,25 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Common\ValorAliquota;
-use TecnoSpeed\Plugnotas\Common\PisCofinsValorAliquota;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Error\RequiredError;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Nfse\Servico;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Deducao;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Evento;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Iss;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Obra;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Retencao;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Valor;
+use EvandroSwk\Plugnotas\Common\ValorAliquota;
+use EvandroSwk\Plugnotas\Common\PisCofinsValorAliquota;
+use EvandroSwk\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Error\RequiredError;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\Servico;
+use EvandroSwk\Plugnotas\Nfse\Servico\Deducao;
+use EvandroSwk\Plugnotas\Nfse\Servico\Evento;
+use EvandroSwk\Plugnotas\Nfse\Servico\Iss;
+use EvandroSwk\Plugnotas\Nfse\Servico\Obra;
+use EvandroSwk\Plugnotas\Nfse\Servico\Retencao;
+use EvandroSwk\Plugnotas\Nfse\Servico\Valor;
 
 class ServicoTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setId
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setId
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::fromArray
      */
     public function testBuildFromArrayWithInvalidParameter()
     {
@@ -40,34 +40,34 @@ class ServicoTest extends TestCase
 
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getCnae
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getCodigo
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getCodigoCidadeIncidencia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getCodigoTributacao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getDeducao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getDescricaoCidadeIncidencia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getDiscriminacao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getEvento
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getIdIntegracao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getInformacoesLegais
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getIss
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getObra
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getRetencao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::getValor
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setCnae
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setCodigo
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setCodigoCidadeIncidencia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setCodigoTributacao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setDeducao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setDescricaoCidadeIncidencia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setDiscriminacao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setEvento
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setIdIntegracao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setInformacoesLegais
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setIss
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setObra
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setRetencao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::setValor
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getCnae
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getCodigo
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getCodigoCidadeIncidencia
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getCodigoTributacao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getDeducao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getDescricaoCidadeIncidencia
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getDiscriminacao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getEvento
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getIdIntegracao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getInformacoesLegais
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getIss
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getObra
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getRetencao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::getValor
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setCnae
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setCodigo
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setCodigoCidadeIncidencia
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setCodigoTributacao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setDeducao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setDescricaoCidadeIncidencia
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setDiscriminacao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setEvento
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setIdIntegracao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setInformacoesLegais
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setIss
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setObra
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setRetencao
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::setValor
      */
     public function testWithValidData()
     {
@@ -141,7 +141,7 @@ class ServicoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::validate
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::validate
      */
     public function testValidateWithInvalidObject()
     {
@@ -157,7 +157,7 @@ class ServicoTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Servico::validate
+     * @covers EvandroSwk\Plugnotas\Nfse\Servico::validate
      */
     public function testValidateWithValidObject()
     {

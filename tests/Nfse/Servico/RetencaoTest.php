@@ -1,11 +1,11 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse\Servico;
+namespace EvandroSwk\Plugnotas\Tests\Nfse\Servico;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Common\ValorAliquota;
-use TecnoSpeed\Plugnotas\Common\PisCofinsValorAliquota;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Retencao;
+use EvandroSwk\Plugnotas\Common\ValorAliquota;
+use EvandroSwk\Plugnotas\Common\PisCofinsValorAliquota;
+use EvandroSwk\Plugnotas\Nfse\Servico\Retencao;
 
 class RetencaoTest extends TestCase
 {

@@ -2,9 +2,9 @@
 
 require '../vendor/autoload.php';
 
-use TecnoSpeed\Plugnotas\Nfse\Tomador;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Nfse\Tomador;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Communication\CallApi;
 
 try {
     $tomador = Tomador::fromArray([

@@ -1,12 +1,12 @@
 <?php
-namespace TecnoSpeed\Plugnotas;
+namespace EvandroSwk\Plugnotas;
 
 use Respect\Validation\Validator as v;
-use TecnoSpeed\Plugnotas\Abstracts\BuilderAbstract;
-use TecnoSpeed\Plugnotas\Interfaces\ICertificado;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
-use TecnoSpeed\Plugnotas\Traits\Communication;
-use TecnoSpeed\Plugnotas\Error\RequiredError;
+use EvandroSwk\Plugnotas\Abstracts\BuilderAbstract;
+use EvandroSwk\Plugnotas\Interfaces\ICertificado;
+use EvandroSwk\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Traits\Communication;
+use EvandroSwk\Plugnotas\Error\RequiredError;
 
 use __ as Bottomline;
 

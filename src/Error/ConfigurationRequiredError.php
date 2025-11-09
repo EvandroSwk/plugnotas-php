@@ -1,6 +1,6 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Error;
+namespace EvandroSwk\Plugnotas\Error;
 
 class ConfigurationRequiredError extends \Exception
 {

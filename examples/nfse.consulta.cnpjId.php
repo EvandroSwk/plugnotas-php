@@ -4,8 +4,8 @@
 
 require '../vendor/autoload.php';
 
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Nfse;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Nfse;
 
 try {
     // Criando configuração (este objeto é onde você irá colocar seu api-key)

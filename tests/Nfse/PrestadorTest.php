@@ -1,6 +1,6 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse;
+namespace EvandroSwk\Plugnotas\Tests\Nfse;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -8,20 +8,20 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Common\Endereco;
-use TecnoSpeed\Plugnotas\Common\Telefone;
-use TecnoSpeed\Plugnotas\Common\Nfse;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Error\InvalidTypeError;
-use TecnoSpeed\Plugnotas\Error\RequiredError;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
-use TecnoSpeed\Plugnotas\Nfse\Prestador;
+use EvandroSwk\Plugnotas\Common\Endereco;
+use EvandroSwk\Plugnotas\Common\Telefone;
+use EvandroSwk\Plugnotas\Common\Nfse;
+use EvandroSwk\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Error\InvalidTypeError;
+use EvandroSwk\Plugnotas\Error\RequiredError;
+use EvandroSwk\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\Prestador;
 
 class PrestadorTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setCertificado
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setCertificado
      */
     public function testWithInvlidaCertificateId()
     {
@@ -32,7 +32,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setCpfCnpj
      */
     public function testWithInvalidLengthCpfCnpj()
     {
@@ -43,7 +43,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setCpfCnpj
      */
     public function testWithInvalidCpfFormation()
     {
@@ -54,7 +54,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setCpfCnpj
      */
     public function testWithInvalidCnpjFormation()
     {
@@ -65,7 +65,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setSimplesNacional
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setSimplesNacional
      */
     public function testWithNullSimplesNacional()
     {
@@ -76,7 +76,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setRazaoSocial
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setRazaoSocial
      */
     public function testWithNullRazaoSocial()
     {
@@ -87,7 +87,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setEmail
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setEmail
      */
     public function testWithInvalidEmail()
     {
@@ -98,34 +98,34 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getCertificado
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getCpfCnpj
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getEmail
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getEndereco
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getIncentivadorCultural
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getIncentivoFiscal
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getInscricaoMunicipal
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getNomeFantasia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getRazaoSocial
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getRegimeTributario
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getRegimeTributarioEspecial
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getSimplesNacional
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getTelefone
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::getNfse
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setCertificado
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setCpfCnpj
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setEmail
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setEndereco
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setIncentivadorCultural
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setIncentivoFiscal
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setInscricaoMunicipal
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setNomeFantasia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setRazaoSocial
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setRegimeTributario
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setRegimeTributarioEspecial
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setSimplesNacional
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setTelefone
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::setNfse
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getCertificado
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getEmail
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getEndereco
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getIncentivadorCultural
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getIncentivoFiscal
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getInscricaoMunicipal
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getNomeFantasia
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getRazaoSocial
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getRegimeTributario
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getRegimeTributarioEspecial
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getSimplesNacional
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getTelefone
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::getNfse
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setCertificado
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setCpfCnpj
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setEmail
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setEndereco
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setIncentivadorCultural
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setIncentivoFiscal
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setInscricaoMunicipal
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setNomeFantasia
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setRazaoSocial
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setRegimeTributario
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setRegimeTributarioEspecial
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setSimplesNacional
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setTelefone
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::setNfse
      */
     public function testValidPrestadorCreation()
     {
@@ -183,7 +183,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::fromArray
      */
     public function testBuildFromArray()
     {
@@ -194,7 +194,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::fromArray
      */
     public function testBuildFromArrayWithNfse()
     {
@@ -212,7 +212,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::fromArray
      */
     public function testBuildFromArrayWithNfseInvalid()
     {
@@ -232,7 +232,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::fromArray
      */
     public function testBuildFromArrayWithEnderecoAndTelefone()
     {
@@ -254,7 +254,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::fromArray
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::fromArray
      */
     public function testBuildFromArrayWithInvalidParameter()
     {
@@ -264,7 +264,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::validate
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::validate
      */
     public function testValidateWithInvalidObject()
     {
@@ -280,7 +280,7 @@ class PrestadorTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Prestador::validate
+     * @covers EvandroSwk\Plugnotas\Nfse\Prestador::validate
      */
     public function testValidateWithValidObject()
     {

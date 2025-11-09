@@ -2,9 +2,9 @@
 
 require '/home/thiago_ribeiro/Projetos/github.com/plugnotas-php/vendor/autoload.php';
 
-use TecnoSpeed\Plugnotas\Nfse\Prestador;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Nfse\Prestador;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Communication\CallApi;
 
 try {
     $prestador = Prestador::fromArray([

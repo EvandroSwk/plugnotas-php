@@ -1,16 +1,16 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Common;
+namespace EvandroSwk\Plugnotas\Tests\Common;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Common\Telefone;
-use TecnoSpeed\Plugnotas\Error\InvalidTypeError;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Common\Telefone;
+use EvandroSwk\Plugnotas\Error\InvalidTypeError;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 class TelefoneTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::setDdd
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::setDdd
      */
     public function testEmptyDDD()
     {
@@ -21,7 +21,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::setDdd
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::setDdd
      */
     public function testInvalidDDD()
     {
@@ -32,7 +32,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::setNumero
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::setNumero
      */
     public function testEmptyNumber()
     {
@@ -43,7 +43,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::setNumero
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::setNumero
      */
     public function testInvalidNumber()
     {
@@ -54,8 +54,8 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::getDdd
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::setDdd
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::getDdd
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::setDdd
      */
     public function testDddWithTraillingZero()
     {
@@ -65,8 +65,8 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::getNumero
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::setNumero
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::getNumero
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::setNumero
      */
     public function testNumberWithTraillingZero()
     {
@@ -76,7 +76,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::getNumero
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::getNumero
      */
     public function testNumberWithNineCharacter()
     {
@@ -86,7 +86,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::getNumero
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::getNumero
      */
     public function testNumberWithEightCharacter()
     {
@@ -96,8 +96,8 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::getDdd
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::getNumero
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::getDdd
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::getNumero
      */
     public function testConstructorWithValidNumber()
     {
@@ -107,7 +107,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::__construct
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::__construct
      */
     public function testConstructorWithInvalidDdd()
     {
@@ -117,7 +117,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::__construct
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::__construct
      */
     public function testConstructorWithInvalidNumber()
     {
@@ -127,7 +127,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::fromArray
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::fromArray
      */
     public function testWithInvalidNumberFromArray()
     {
@@ -140,7 +140,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::fromArray
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::fromArray
      */
     public function testWithNoArrayFromArray()
     {
@@ -150,7 +150,7 @@ class TelefoneTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Common\Telefone::fromArray
+     * @covers EvandroSwk\Plugnotas\Common\Telefone::fromArray
      */
     public function testWithValidArray()
     {

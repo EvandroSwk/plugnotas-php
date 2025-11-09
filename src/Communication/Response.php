@@ -1,6 +1,6 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Communication;
+namespace EvandroSwk\Plugnotas\Communication;
 
 class Response
 {

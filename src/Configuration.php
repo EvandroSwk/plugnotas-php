@@ -1,5 +1,5 @@
 <?php
-namespace TecnoSpeed\Plugnotas;
+namespace EvandroSwk\Plugnotas;
 
 class Configuration
 {

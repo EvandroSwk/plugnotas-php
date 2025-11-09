@@ -1,9 +1,9 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Common;
+namespace EvandroSwk\Plugnotas\Common;
 
-use TecnoSpeed\Plugnotas\Abstracts\BuilderAbstract;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Abstracts\BuilderAbstract;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 use Respect\Validation\Validator as v;
 
 class Nfse extends BuilderAbstract

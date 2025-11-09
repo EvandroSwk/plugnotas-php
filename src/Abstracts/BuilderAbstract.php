@@ -1,11 +1,11 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Abstracts;
+namespace EvandroSwk\Plugnotas\Abstracts;
 
 use FerFabricio\Hydrator\Extract;
 use FerFabricio\Hydrator\Hydrate;
-use TecnoSpeed\Plugnotas\Error\InvalidTypeError;
-use TecnoSpeed\Plugnotas\Interfaces\IBuilder;
+use EvandroSwk\Plugnotas\Error\InvalidTypeError;
+use EvandroSwk\Plugnotas\Interfaces\IBuilder;
 
 abstract class BuilderAbstract implements IBuilder
 {

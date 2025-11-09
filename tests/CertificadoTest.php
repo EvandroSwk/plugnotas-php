@@ -1,10 +1,10 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests;
+namespace EvandroSwk\Plugnotas\Tests;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Certificado;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Certificado;
 
 class CertificadoTest extends TestCase
 {

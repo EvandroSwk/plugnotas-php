@@ -2,9 +2,9 @@
 
 require '../vendor/autoload.php';
 
-use TecnoSpeed\Plugnotas\Nfse\Servico;
-use TecnoSpeed\Plugnotas\Configuration;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Nfse\Servico;
+use EvandroSwk\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Communication\CallApi;
 
 try {
     $servico = Servico::fromArray([

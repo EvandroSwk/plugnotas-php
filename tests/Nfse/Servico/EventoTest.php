@@ -1,9 +1,9 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse\Servico;
+namespace EvandroSwk\Plugnotas\Tests\Nfse\Servico;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Evento;
+use EvandroSwk\Plugnotas\Nfse\Servico\Evento;
 
 class EventoTest extends TestCase
 {

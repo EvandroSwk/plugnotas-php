@@ -1,6 +1,6 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Communication;
+namespace EvandroSwk\Plugnotas\Tests\Communication;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -9,15 +9,15 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Communication\CallApi;
-use TecnoSpeed\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Configuration;
 
 class CallApiTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::__construct
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::setClient
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::send
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::__construct
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::setClient
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::send
      */
     public function testGetSuccessFull()
     {
@@ -42,9 +42,9 @@ class CallApiTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::__construct
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::setClient
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::send
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::__construct
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::setClient
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::send
      */
     public function testPostSuccessFull()
     {
@@ -69,9 +69,9 @@ class CallApiTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::__construct
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::setClient
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::send
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::__construct
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::setClient
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::send
      */
     public function testPostException()
     {
@@ -100,7 +100,7 @@ class CallApiTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::download
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::download
      */
     public function testDownloadGetSuccessFull()
     {
@@ -126,7 +126,7 @@ class CallApiTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::download
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::download
      */
     public function testDownloadPostSuccessFull()
     {
@@ -152,7 +152,7 @@ class CallApiTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Communication\CallApi::download
+     * @covers EvandroSwk\Plugnotas\Communication\CallApi::download
      */
     public function testDownloadPostException()
     {

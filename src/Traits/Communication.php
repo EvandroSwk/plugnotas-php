@@ -1,9 +1,9 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Traits;
+namespace EvandroSwk\Plugnotas\Traits;
 
-use TecnoSpeed\Plugnotas\Communication\CallApi;
-use TecnoSpeed\Plugnotas\Error\ConfigurationRequiredError;
+use EvandroSwk\Plugnotas\Communication\CallApi;
+use EvandroSwk\Plugnotas\Error\ConfigurationRequiredError;
 
 trait Communication
 {

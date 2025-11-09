@@ -1,15 +1,15 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse;
+namespace EvandroSwk\Plugnotas\Tests\Nfse;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Nfse\Rps;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\Rps;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 class RpsTest extends TestCase
 {
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Rps::setCompetencia
+     * @covers EvandroSwk\Plugnotas\Nfse\Rps::setCompetencia
      */
     public function testWithInvalidCompetencia()
     {
@@ -19,7 +19,7 @@ class RpsTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Rps::setDataEmissao
+     * @covers EvandroSwk\Plugnotas\Nfse\Rps::setDataEmissao
      */
     public function testWithInvalidDataEmissao()
     {
@@ -29,10 +29,10 @@ class RpsTest extends TestCase
     }
 
     /**
-     * @covers TecnoSpeed\Plugnotas\Nfse\Rps::setDataEmissao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Rps::setCompetencia
-     * @covers TecnoSpeed\Plugnotas\Nfse\Rps::getDataEmissao
-     * @covers TecnoSpeed\Plugnotas\Nfse\Rps::getCompetencia
+     * @covers EvandroSwk\Plugnotas\Nfse\Rps::setDataEmissao
+     * @covers EvandroSwk\Plugnotas\Nfse\Rps::setCompetencia
+     * @covers EvandroSwk\Plugnotas\Nfse\Rps::getDataEmissao
+     * @covers EvandroSwk\Plugnotas\Nfse\Rps::getCompetencia
      */
     public function testWithValidRpsData()
     {

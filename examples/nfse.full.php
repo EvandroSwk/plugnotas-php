@@ -2,32 +2,32 @@
 
 require '../vendor/autoload.php';
 
-use TecnoSpeed\Plugnotas\Common\Endereco;
-use TecnoSpeed\Plugnotas\Common\Telefone;
-use TecnoSpeed\Plugnotas\Common\ValorAliquota;
-use TecnoSpeed\Plugnotas\Common\PisCofinsValorAliquota;
-use TecnoSpeed\Plugnotas\Configuration;
+use EvandroSwk\Plugnotas\Common\Endereco;
+use EvandroSwk\Plugnotas\Common\Telefone;
+use EvandroSwk\Plugnotas\Common\ValorAliquota;
+use EvandroSwk\Plugnotas\Common\PisCofinsValorAliquota;
+use EvandroSwk\Plugnotas\Configuration;
 
-use TecnoSpeed\Plugnotas\Nfse;
-use TecnoSpeed\Plugnotas\Nfse\Parcelas;
-use TecnoSpeed\Plugnotas\Nfse\Intermediario;
-use TecnoSpeed\Plugnotas\Nfse\CamposExtras;
-use TecnoSpeed\Plugnotas\Nfse\CidadePrestacao;
-use TecnoSpeed\Plugnotas\Nfse\CargaTributaria;
-use TecnoSpeed\Plugnotas\Nfse\Impressao;
-use TecnoSpeed\Plugnotas\Nfse\Prestador;
-use TecnoSpeed\Plugnotas\Nfse\Rps;
-use TecnoSpeed\Plugnotas\Nfse\Servico;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Deducao;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Evento;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Iss;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Ibpt;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Obra;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Retencao;
-use TecnoSpeed\Plugnotas\Nfse\Servico\Valor;
-use TecnoSpeed\Plugnotas\Nfse\Tomador;
-use TecnoSpeed\Plugnotas\Error\RequiredError;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse;
+use EvandroSwk\Plugnotas\Nfse\Parcelas;
+use EvandroSwk\Plugnotas\Nfse\Intermediario;
+use EvandroSwk\Plugnotas\Nfse\CamposExtras;
+use EvandroSwk\Plugnotas\Nfse\CidadePrestacao;
+use EvandroSwk\Plugnotas\Nfse\CargaTributaria;
+use EvandroSwk\Plugnotas\Nfse\Impressao;
+use EvandroSwk\Plugnotas\Nfse\Prestador;
+use EvandroSwk\Plugnotas\Nfse\Rps;
+use EvandroSwk\Plugnotas\Nfse\Servico;
+use EvandroSwk\Plugnotas\Nfse\Servico\Deducao;
+use EvandroSwk\Plugnotas\Nfse\Servico\Evento;
+use EvandroSwk\Plugnotas\Nfse\Servico\Iss;
+use EvandroSwk\Plugnotas\Nfse\Servico\Ibpt;
+use EvandroSwk\Plugnotas\Nfse\Servico\Obra;
+use EvandroSwk\Plugnotas\Nfse\Servico\Retencao;
+use EvandroSwk\Plugnotas\Nfse\Servico\Valor;
+use EvandroSwk\Plugnotas\Nfse\Tomador;
+use EvandroSwk\Plugnotas\Error\RequiredError;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 try {
 
@@ -244,7 +244,7 @@ try {
     $nfse->setInformacoesComplementares("Informações complementares a nota.");
     $nfse->setParcelas($parcelas);
 
-    $response = $nfse->send($configuration); // A resposta sempre será um objeto TecnoSpeed\Plugnotas\Communication\Response
+    $response = $nfse->send($configuration); // A resposta sempre será um objeto EvandroSwk\Plugnotas\Communication\Response
     var_dump($response);
 } catch (ValidationError $e) {
     // Algum campo foi informado no formato errado

@@ -1,10 +1,10 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Nfse\Servico;
+namespace EvandroSwk\Plugnotas\Nfse\Servico;
 
 use Respect\Validation\Validator as v;
-use TecnoSpeed\Plugnotas\Abstracts\BuilderAbstract;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Abstracts\BuilderAbstract;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 class Deducao extends BuilderAbstract
 {

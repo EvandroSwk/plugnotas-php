@@ -1,10 +1,10 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Nfse;
+namespace EvandroSwk\Plugnotas\Tests\Nfse;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Nfse\CidadePrestacao;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Nfse\CidadePrestacao;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 class CidadePrestacaoTest extends TestCase
 {

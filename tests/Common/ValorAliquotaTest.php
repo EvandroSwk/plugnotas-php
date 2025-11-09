@@ -1,10 +1,10 @@
 <?php
 
-namespace TecnoSpeed\Plugnotas\Tests\Common;
+namespace EvandroSwk\Plugnotas\Tests\Common;
 
 use PHPUnit\Framework\TestCase;
-use TecnoSpeed\Plugnotas\Common\ValorAliquota;
-use TecnoSpeed\Plugnotas\Error\ValidationError;
+use EvandroSwk\Plugnotas\Common\ValorAliquota;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 
 class ValorAliquotaTest extends TestCase
 {
