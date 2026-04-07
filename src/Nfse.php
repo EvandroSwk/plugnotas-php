@@ -19,6 +19,8 @@ use EvandroSwk\Plugnotas\Nfse\Tomador;
 use EvandroSwk\Plugnotas\Nfse\Intermediario;
 use EvandroSwk\Plugnotas\Nfse\CamposExtras;
 use EvandroSwk\Plugnotas\Nfse\Parcelas;
+use EvandroSwk\Plugnotas\Nfse\Emitente;
+use EvandroSwk\Plugnotas\Nfse\IbsCbs;
 use EvandroSwk\Plugnotas\Traits\Communication;
 
 
@@ -45,6 +47,9 @@ class Nfse extends BuilderAbstract implements IDfe
     private $parcelas;
     private $informacoesComplementares;
     private $ativo;
+    private $versao;
+    private $emitente;
+    private $ibsCbs;
 
 
     public function setCidadePrestacao(CidadePrestacao $cidadePrestacao)
@@ -246,6 +251,41 @@ class Nfse extends BuilderAbstract implements IDfe
         return $this->ativo;
     }
 
+    public function setVersao($versao)
+    {
+        if (!v::in(['1.00', '1.01'])->validate($versao)) {
+            throw new ValidationError(
+                'Versão NFSe Nacional inválida. Valores aceitos: "1.00" ou "1.01".'
+            );
+        }
+        $this->versao = $versao;
+    }
+
+    public function getVersao()
+    {
+        return $this->versao;
+    }
+
+    public function setEmitente(Emitente $emitente)
+    {
+        $this->emitente = $emitente;
+    }
+
+    public function getEmitente()
+    {
+        return $this->emitente;
+    }
+
+    public function setIbsCbs(IbsCbs $ibsCbs)
+    {
+        $this->ibsCbs = $ibsCbs;
+    }
+
+    public function getIbsCbs()
+    {
+        return $this->ibsCbs;
+    }
+
     public function validate()
     {
         $data = $this->toArray();
@@ -338,6 +378,14 @@ class Nfse extends BuilderAbstract implements IDfe
 
         if (array_key_exists('parcelas', $data)) {
             $data['parcelas'] = Parcelas::fromArray($data['parcelas']);
+        }
+
+        if (array_key_exists('emitente', $data)) {
+            $data['emitente'] = Emitente::fromArray($data['emitente']);
+        }
+
+        if (array_key_exists('ibsCbs', $data)) {
+            $data['ibsCbs'] = IbsCbs::fromArray($data['ibsCbs']);
         }
 
         return Hydrate::toObject(Nfse::class, $data);
@@ -450,5 +498,16 @@ class Nfse extends BuilderAbstract implements IDfe
     {
         $communication = $this->getCallApiInstance($this->configuration);
         return $communication->send('GET', "/nfse/cancelar/status/${id}", null);
+    }
+
+    public function findByPeriod($cpfCnpj, $dataInicio, $dataFim)
+    {
+        $cleanCpfCnpj = preg_replace('/[^0-9]/', '', $cpfCnpj);
+        $communication = $this->getCallApiInstance($this->configuration);
+        return $communication->send(
+            'GET',
+            "/nfse/nacional/{$cleanCpfCnpj}/consultar/periodo?dataInicio={$dataInicio}&dataFim={$dataFim}",
+            null
+        );
     }
 }

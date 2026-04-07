@@ -17,6 +17,7 @@ class Retencao extends BuilderAbstract
     private $outrasRetencoes;
     private $pis;
     private $cpp;
+    private $tipoRetencaoPisCofinsCSLL;
 
     public function setCofins(PisCofinsValorAliquota $cofins)
     {
@@ -86,13 +87,36 @@ class Retencao extends BuilderAbstract
     {
         return $this->cpp;
     }
+
+    /**
+     * Tipo de retenção de PIS/COFINS/CSLL — específico para NFSe Nacional (NT007).
+     * Substitui os flags pis.retido e cofins.retido para o padrão nacional.
+     * Valores aceitos: "0" a "9" conforme tabela da NT007.
+     */
+    public function setTipoRetencaoPisCofinsCSLL($tipoRetencaoPisCofinsCSLL)
+    {
+        if (!v::in(['0','1','2','3','4','5','6','7','8','9'])->validate((string) $tipoRetencaoPisCofinsCSLL)) {
+            throw new ValidationError(
+                'tipoRetencaoPisCofinsCSLL inválido. Valores aceitos: 0 a 9.'
+            );
+        }
+        $this->tipoRetencaoPisCofinsCSLL = (string) $tipoRetencaoPisCofinsCSLL;
+    }
+
+    public function getTipoRetencaoPisCofinsCSLL()
+    {
+        return $this->tipoRetencaoPisCofinsCSLL;
+    }
+
     public static function fromArray($data)
     {
         $retencao = new Retencao();
 
+        $scalarFields = ['outrasRetencoes', 'tipoRetencaoPisCofinsCSLL'];
+
         foreach ($data as $key => $value) {
-            if ($key == 'outrasRetencoes') {
-                $retencao->setOutrasRetencoes($value);
+            if (in_array($key, $scalarFields)) {
+                $retencao->{'set' . ucfirst($key)}($value);
                 continue;
             }
 

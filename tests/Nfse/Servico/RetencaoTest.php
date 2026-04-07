@@ -5,6 +5,7 @@ namespace EvandroSwk\Plugnotas\Tests\Nfse\Servico;
 use PHPUnit\Framework\TestCase;
 use EvandroSwk\Plugnotas\Common\ValorAliquota;
 use EvandroSwk\Plugnotas\Common\PisCofinsValorAliquota;
+use EvandroSwk\Plugnotas\Error\ValidationError;
 use EvandroSwk\Plugnotas\Nfse\Servico\Retencao;
 
 class RetencaoTest extends TestCase
@@ -30,6 +31,38 @@ class RetencaoTest extends TestCase
         $this->assertSame($retencao->getPis()->getAliquota(), 6.06);
         $this->assertSame($retencao->getPis()->getValor(), 606.60);
         $this->assertSame($retencao->getPis()->getCst(), 3.01);
+    }
+
+    public function testTipoRetencaoPisCofinsCSLLValid()
+    {
+        $retencao = new Retencao();
+        $retencao->setTipoRetencaoPisCofinsCSLL('0');
+        $this->assertSame('0', $retencao->getTipoRetencaoPisCofinsCSLL());
+
+        $retencao->setTipoRetencaoPisCofinsCSLL(9);
+        $this->assertSame('9', $retencao->getTipoRetencaoPisCofinsCSLL());
+    }
+
+    public function testTipoRetencaoPisCofinsCSLLInvalid()
+    {
+        $this->expectException(ValidationError::class);
+        $this->expectExceptionMessage('tipoRetencaoPisCofinsCSLL inválido.');
+
+        $retencao = new Retencao();
+        $retencao->setTipoRetencaoPisCofinsCSLL('10');
+    }
+
+    public function testFromArrayWithTipoRetencao()
+    {
+        $data = [
+            'tipoRetencaoPisCofinsCSLL' => '1',
+        ];
+
+        $retencao = Retencao::fromArray($data);
+
+        $this->assertInstanceOf(Retencao::class, $retencao);
+        $this->assertSame('1', $retencao->getTipoRetencaoPisCofinsCSLL());
+        $this->assertNull($retencao->getPis());
     }
 
 }
