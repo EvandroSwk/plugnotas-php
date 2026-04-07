@@ -17,7 +17,7 @@ class CertificadoTest extends TestCase
 
         $response = $certificado->get();
 
-        $this->assertObjectHasAttribute('body', $response);
+        $this->assertTrue(property_exists($response, 'body'));
         $this->assertEquals(200, $response->statusCode);
         $this->assertCount(1, $response->body);
     }
@@ -34,9 +34,9 @@ class CertificadoTest extends TestCase
         $response = $certificado->create();
 
         $this->assertEquals(201, $response->statusCode);
-        $this->assertObjectHasAttribute('body', $response);
-        $this->assertObjectHasAttribute('message', $response->body);
-        $this->assertObjectHasAttribute('id', $response->body->data);
+        $this->assertTrue(property_exists($response, 'body'));
+        $this->assertTrue(property_exists($response->body, 'message'));
+        $this->assertTrue(property_exists($response->body->data, 'id'));
     }
 
     public function testUpdateCertificate()
@@ -53,7 +53,7 @@ class CertificadoTest extends TestCase
         $response = $certificado->update($id);
 
         $this->assertEquals(200, $response->statusCode);
-        $this->assertObjectHasAttribute('body', $response);
-        $this->assertObjectHasAttribute('message', $response->body);
+        $this->assertTrue(property_exists($response, 'body'));
+        $this->assertTrue(property_exists($response->body, 'message'));
     }
 }

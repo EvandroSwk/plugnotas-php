@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+      - vendor:/app/vendor
+    working_dir: /app
+    command: vendor/bin/phpunit
+
+volumes:
+  vendor:
